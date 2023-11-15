@@ -112,21 +112,25 @@ public class recursion {
 		return isPalindrome(str, i + 1);
 	}
 	
-	//fibonacci series upto Nth term
-	
+	// fibonacci series upto Nth term
+	// brute force using loop 
+	// the intution is that the first two element of fibonacci series is 0 and 1
+	// so we manually add them first then we conunt for the third number 
 	static void fibonacci(int N) {
 		if(N == 0) System.out.println(0);
 		else {
+			// creating the a array of size N + 1 because it got two 1's 
+			// if N = 5, the fib series is 0,1,1,2,3,4,5
 			int[] ans = new int[N+1];
 			ans[0] = 0;
 			ans[1] = 1;
-			
+			// so to calculate the nth element we need n-1 th and n-2 th element
+			// simply two elements form before position of the number we are calculating 
 			for(int i = 2; i <= N ;i++) {
 				ans[i] = ans[i-1] + ans[i-2];
 			}
 			for(int i : ans) {
 				System.out.print(i + " ");
-			
 			}
 		}
 	}
